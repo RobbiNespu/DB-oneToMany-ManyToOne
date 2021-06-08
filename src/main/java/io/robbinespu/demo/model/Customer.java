@@ -25,11 +25,10 @@ public class Customer implements Serializable {
     
         @OneToMany(
             cascade = CascadeType.ALL,
-            orphanRemoval = true
+            orphanRemoval = true,
+            mappedBy = "customer"
         )
-        @JoinColumn(name = "order")
-        private List<Cart> cart = new ArrayList<>();
 
-    
+        private List<Cart> order = new ArrayList<>();  
 }
 
